@@ -1,0 +1,595 @@
+ 1. Write a Program to Test the Prime number ?
+	package com.assignment.questions;
+
+	import java.util.Scanner;
+
+	public class PrimeNumOrNot {
+
+	public static void main(String[] args) {
+		   Scanner ref = new Scanner(System.in);
+		   System.out.println("Enter the number");
+			int num = ref.nextInt();
+		
+			int count = 0;
+			for (int i = 2; i < num; i++) {
+			if (num % i == 0) {
+				count++;
+			}
+			}
+			if (count == 0) {
+			System.out.println("The entered number is a prime num" +" "+ num);
+		        } else {
+			System.out.println("The entered number is not a prime num" +" "+ num);
+		        }
+		       ref.close();
+	}
+
+}
+
+
+Output:
+Enter the number
+5
+The entered number is a prime num5
+-------------------------------------------
+Enter the number
+10
+The entered number is not a prime num 10
+
+
+
+2.  Write a Program to design a String class that perform String Method (Equal, Reverse the string, change case) ?
+
+package com.Microsoft.oraxle;
+
+public class TringClass {
+
+	public static void main(String[] args) {
+
+		String def="Praveen Kumar";
+		String toi= "Jenito Paul";
+		
+		for (int i = toi.length()-1; i >=0; i--) {
+			System.out.print(toi.charAt(i));
+		}
+		System.out.println(" ");
+		for (int j = def.length()-1; j >=0; j--) {
+			System.out.print(def.charAt(j));
+		}
+		System.out.println(" ");
+		System.out.println(def.length());
+
+		System.out.println(def.charAt(3));
+
+		System.out.println(def.startsWith("Pra"));
+
+		System.out.println(def.concat(" Developer"));
+
+		System.out.println(def.endsWith("ar"));
+
+		System.out.println(def.substring(4));
+
+		System.out.println(def.toUpperCase());
+
+		System.out.println(def.toLowerCase());
+
+		System.out.println(def.equals(toi));
+
+		System.out.println(toi.endsWith("aul"));
+
+		System.out.println(def.contains("een"));
+
+		System.out.println(toi.hashCode());
+
+		System.out.println(def.hashCode());
+
+		System.out.println(def.toString());
+
+		System.out.println(toi.toString());
+
+		System.out.println(SstringClass.class);
+
+		System.out.println(toi.replace("Jenito Paul", "Jaul"));
+
+		System.out.println(def.replaceAll("Praveen", "Prasanth"));
+
+		System.out.println(def.split("Kumar"));
+		
+
+	
+	}
+
+
+	}
+
+
+Output:
+
+luaP otineJ 
+ramuK neevarP 
+13
+v
+true
+Praveen Kumar Developer
+true
+een Kumar
+PRAVEEN KUMAR
+praveen kumar
+false
+true
+true
+1937634775
+1799769291
+Praveen Kumar
+Jenito Paul
+class com.Microsoft.oraxle.SstringClass
+Jaul
+Prasanth Kumar
+[Ljava.lang.String;@15db9742
+
+3.  Write a Program to handle the Exception using try and multiple catch block ?
+package com.practice.numberpgms;
+
+public class OneTryAndMultipleCatch {
+
+	private static String ref;
+
+	public static void main(String[] args) {
+		ref = null;
+		try {
+			int c = 10 / 0;
+			System.out.println(ref.length());
+
+		} catch (NullPointerException e) {
+			System.out.println("Exception handled");
+		}
+
+		catch (ArithmeticException f) {
+			System.out.println("Arithmetic Exception Handled");
+		}
+
+	}
+
+}
+
+
+
+Output:
+Arithmetic Exception Handled
+
+
+
+4.  Write a Program to Demonstrate Type Casting ?
+
+package com.practice.numberpgms;
+
+public interface Collections {
+	public static void main() {
+		System.out.println("Interface's Static method");
+	}
+
+	public abstract void set();
+
+	public abstract void list();
+
+	public abstract void queue();
+
+}
+
+
+
+package com.practice.numberpgms;
+
+public class Framework implements Collections{
+
+	public void set() {
+		System.out.println("Framework class Set");
+	}
+	
+	public void list() {
+		System.out.println("Framework class list");
+	}
+	
+	public void queue() {
+		System.out.println("Framework class queue");
+	}
+	
+	public int sortedSet(int a, int b) {
+		
+		return a+b;
+		
+	}
+	
+	public double sortedSet1(int a, int b ) {
+		
+		return a+b;
+	}
+}
+
+
+package com.practice.numberpgms;
+
+
+
+public class SubclassOfall {
+
+	public static void main(String[] args) {
+		Collections ref =(Collections) new Framework(); //up casting..
+		
+		ref.set();
+		ref.list();
+		ref.queue();
+		Collections.main();
+		
+		/*
+		 * ref.sortedSet(); ref.sortedSet1();  // these are all subclass unimplemented methods we cannot able to access those when up casting is done
+		 */
+		System.out.println("-------------------------------------------");
+		
+		Framework obj =(Framework) new Framework();
+		
+		obj.sortedSet(10, 100);   // now we can able to access  the methods those are all in sub class during down casting
+		obj.sortedSet1(8, 56);
+		
+		obj.set();
+		obj.list();
+		obj.queue();
+		Collections.main();
+	}
+}
+
+
+Output:
+
+(During Upcasting)
+Framework class Set
+Framework class list
+Framework class queue
+Interface's Static method
+-------------------------------------------
+(During DownCasting)
+Framework class Set
+Framework class list
+Framework class queue
+Interface's Static method
+
+5.  Write a Program to design a class account using the inheritance and static that show all function of bank (withdrawal, deposit) ?
+
+
+package com.practice.numberpgms;
+
+public class Account {
+	int acc_num;
+	int amt;
+
+	public Account(int acc_num, int amt) {
+		this.acc_num = acc_num;
+		this.amt = amt;
+	}
+	
+	public void display() {
+		
+		System.out.println("Accont num : "+ acc_num);
+		System.out.println("Account balance :"+ amt);
+	}
+	
+	
+}
+
+
+package com.practice.numberpgms;
+
+public class Transaction extends Account {
+
+	public Transaction(int acc_num, int amt) {
+		super(acc_num, amt);
+
+	}
+
+	public void deposit(int x) {
+		if (x <= 100) {
+			System.out.println("OOps Sorry Transaction cannot be processed");
+		} else {
+			amt += x;
+			System.out.println("Amount Deposited Successfuly" + amt);
+		}
+	}
+
+	public void withDraw(int x) {
+		if (x < amt) {
+			amt = -x;
+			System.out.println("Withdraw Succesfull" + amt);
+		} else {
+			System.out.println("Transaction could not be Processed" + amt);
+
+		}
+
+	}
+
+}
+
+
+
+package com.practice.numberpgms;
+
+public class Driver {
+
+	public static void main(String[] args) {
+
+		Transaction ref = new Transaction(61988379, 10000);
+		ref.display();
+		ref.withDraw(100000);
+		ref.deposit(9000);
+	}
+
+}
+
+
+Output:
+
+Accont num : 61988379
+Account balance :10000
+Transaction could not be Processed10000
+Amount Deposited Successfuly19000
+
+
+6.  Write a Program that Implement the Nested try Statements ?
+
+
+package com.practice.numberpgms;
+
+public class NestedTryStmt {
+
+	private static String str;
+
+	public static void main(String[] args) {
+		int arr[] =new int[4];
+		
+		try {
+			arr[5]=0;
+			try {
+				str.length();
+			} catch (NullPointerException f) {
+				System.out.println("NullPointerException");
+			}
+		}
+		catch (IndexOutOfBoundsException e) {
+			System.out.println("IndexOutOfBoundsException ");
+		}
+		
+		
+	}
+
+}
+
+
+Output:
+
+IndexOutOfBoundsException 
+
+
+7.  Write a Program that show the partial implementation of Interface ?
+
+package com.practice.numberpgms;
+
+public interface Collections2 {
+	
+	public abstract void set();
+	
+	public abstract void list();
+	
+	public abstract void queue();
+	
+}
+
+
+
+package com.practice.numberpgms;
+
+public abstract class Framework2 implements Collections {
+
+	public void set() {
+		System.out.println("Framework class Set");
+	}
+
+	public void list() {
+		System.out.println("Framework class list");
+	}
+
+	public int sortedSet(int a, int b) {
+
+		return a + b;
+
+	}
+
+	public double sortedSet1(int a, int b) {
+
+		return a + b;
+	}
+}
+
+
+package com.practice.numberpgms;
+
+public class EndUser extends Framework2{
+
+	public static void main(String[] args) {
+		
+		Framework2 collect = new EndUser(); 
+		
+		collect.list();
+		collect.queue();
+		collect.set();
+		collect.sortedSet(10,20);
+		collect.sortedSet1(1000, 200);
+	}
+
+	@Override
+	public void queue() {
+		
+		
+	}
+
+}
+
+Output:
+
+Framework class list
+Framework class Set
+
+ 
+
+8   Write a Program to design a class using abstract Methods and Classes ?
+
+package com.practice.numberpgms;
+
+public abstract class AbstractClassAndMethods {
+
+	public abstract void input();
+
+	public abstract void output(int a, String name);
+
+}
+
+
+
+package com.practice.numberpgms;
+
+public class NormalClass extends AbstractClassAndMethods {
+
+	@Override
+	public void input() {
+		System.out.println("Normal class Input");
+
+	}
+
+	@Override
+	public void output(int a, String name) {
+		System.out.println("Normal class out " + " " + a + " " + name);
+	}
+
+}
+
+package com.practice.numberpgms;
+
+public class ImplementingAbstractMethodAndNormal {
+
+	public static void main(String[] args) {
+		NormalClass pop = new NormalClass();
+
+		pop.input();
+		pop.output(10, "Praveen Kumar K");
+	}
+}
+
+
+Output:
+
+Normal class Input
+Normal class out  10 Praveen Kumar K
+
+
+9.  Write a Program to calculate the Simple Interest and Input by the user ?
+
+
+package com.practice.numberpgms;
+
+import java.util.Scanner;
+
+public class SimpleIntrest {
+
+	static void simpleIntrest(double p, int n, double r) {
+
+		double simpleintrest = (p * n * r) / 100;
+		System.out.println("Simple Intrest of amount " + p + " at rate of intrest(" + r + ") is " + simpleintrest);
+	}
+
+	public static void main(String[] args) {
+		Scanner ref = new Scanner(System.in);
+		System.out.println("enter principle Amount : ");
+		double principle = ref.nextDouble();
+		System.out.println("enter number of years : ");
+		int no_of_years = ref.nextInt();
+		System.out.println("enter rate of intrest : ");
+		double rate_of_intrest = ref.nextDouble();
+
+		simpleIntrest(principle, no_of_years, rate_of_intrest);
+		ref.close();
+	}
+
+}
+
+
+Output:
+
+enter principle Amount : 
+10000
+enter number of years : 
+
+2
+enter rate of intrest : 
+
+6
+Simple Intrest of amount 10000.0 at rate of intrest(6.0) is 1200.0
+
+
+
+10. Write a Program to find the factorial of a given number using Recursion
+
+package com.practice.numberpgms;
+
+import java.util.Scanner;
+
+public class Recursive {
+	public static int fact(int n) {
+
+		if (n == 1)
+			return 1;
+		else
+			return n * fact(n - 1);
+
+	}
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Enter the number");
+		int num = scan.nextInt();
+		int factorial = fact(num);
+		System.out.println("The factorial of the given number" + " " + factorial);
+		scan.close();
+	}
+}
+
+
+Output:
+
+Enter the number
+5
+The factorial of the given number 120
+
+
+11. Write a program to find GCD ?
+
+package com.practice.numberpgms;
+
+public class GCD {
+
+	public static void main(String[] args) {
+		int n1 = 30;
+		int n2 = 13;
+		int gcd = 1;
+		for (int i = 1; i <= n1 && i <= n2; ++i) {
+			if (n1 % i == 0 && n2 % i == 0)
+				gcd = i;
+		}
+		System.out.println("GCD of " + n1 + " and " + n2 + " is " + gcd);
+	}
+
+}
+
+
+
+Output:
+
+GCD of 30 and 13 is 1
+ 
