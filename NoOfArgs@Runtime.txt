@@ -1,0 +1,8 @@
+package com.practice.numberpgms;
+
+public class NoOfArgs {
+
+	public static void main(String[] args) {
+		System.out.println("No of Args provided at run time"+args.length);
+	}
+}
