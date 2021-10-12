@@ -1,0 +1,76 @@
+MY SQL COMMANDS :
+
+
+
+1st command must use when we open the commandline client ------ 
+
+Syntax:to display the databases:
+
+1.show databases;
+
+2.To create a Database:
+Syntax:
+create database databasename;
+
+3.To establish the connection with database 
+Syntax:
+use databasename;
+
+4. To Know the no's of tables present in the database 
+Syntax:
+show tables;
+
+5. To create Table 
+Syntax:
+create table tablename(columnname1 datatype constraint,  columnname2 datatype (Primary Key-> unique+notnull) constraint, columnnameN datatype constraint);
+
+6. Structure of the table  (To describe table)
+Syntax:
+describe tablename;
+or
+desc tablename; 
+
+7. Insert values in the tables
+Syntax:
+insert into tablename values(value1),(value2),(value3),(valueN);
+or
+insert into table name (columnname1, columnname2,columnname3,........columnname N) values (value1,value2,value3,..........value N);
+
+
+8. Fetch data from the table 
+Syntax:
+select * 
+from tablename;
+
+9. Alter the table:
+Syntax:
+Alter table tablename add columnname datatype Constrain(optional);
+
+10. To  delete the column 
+Syntax:
+Alter Table tablename drop  column columnname;
+
+11. To change column name datatypes/constraint 
+Syntax:
+Alter Table tablename modify tablename datatype/constraints;
+
+12. To Rename Column name 
+Syntax:
+Alter table tablename change old colmname new colmnname datatype ;
+
+13. Rename the table name  
+Syntax:
+Rename table oldtablename to newtable name;
+
+14. truncate the table means removing data without distrubing the structure
+Syntax:
+truncate table tablename;
+
+15. droping the table means  deleting the table from database 
+Syntax:
+drop table tablename;
+
+16. droping the entire database from databases
+Syntax:
+drop database databasename;
+	 
